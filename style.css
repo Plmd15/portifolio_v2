@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3b3b3b;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.top-bar {
+    width: 100%;
+    height: 200px;
+    background-color: #222222;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 40px;
+    gap: 30px;
+}
+
+.avatar-topo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+.titulo-topo {
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+
+.subtitulo-topo {
+    color: #ffffff;
+}
+
+.card-container {
+    max-width: 1000px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;   
+    gap: 1.25rem;
+    transition: all 0.4s;
+    margin-top: 80px; 
+}
+
+.expandable-card {
+    flex: 1;
+    height: 100%;
+    transition: all 0.4s; 
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.expandable-card img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.expandable-card:nth-child(odd) {
+    translate: 0 -20px;
+}
+.expandable-card:nth-child(even) {
+    translate: 0 -20px;
+}
+
+.card-container .expandable-card:not(:hover) {
+    filter: grayscale(100%);
+}
+
+.expandable-card:hover {
+    flex: 4;
+}
+
+.expandable-card:hover img {
+    width: 50%; 
+}
+
+.card-text-block {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: width 0.4s ease, opacity 0.3s ease;
+}
+
+.card-text-block h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.card-text-block p {
+    color: #b3b3b3;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.btn-projeto {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #222222;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-projeto:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.expandable-card:hover .card-text-block {
+    width: 50%;           
+    opacity: 1;
+    padding-left: 25px;
+}
